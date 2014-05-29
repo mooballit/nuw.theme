@@ -1,0 +1,2 @@
+<tal:quicklinks tal:replace="structure context/@@quicklinks" />
+<tal:social-icons tal:replace="structure context/@@socialiconsbig" />

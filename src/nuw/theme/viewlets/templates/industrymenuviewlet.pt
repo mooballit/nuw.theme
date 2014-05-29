@@ -1,0 +1,7 @@
+<div class="industry-menu in-grey-bar" tal:condition="viewlet/tabs">
+    <ul class="nav nav-tabs">
+        <li tal:attributes="class python:tab['active'] and 'active' or ''" tal:repeat="tab viewlet/tabs">
+            <a tal:attributes="href tab/url" tal:content="tab/title"></a>
+        </li>
+    </ul>
+</div>

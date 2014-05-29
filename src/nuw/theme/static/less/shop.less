@@ -1,0 +1,217 @@
+#checkout, #cart
+{
+    label input[type="checkbox"]
+    {
+        margin-top: 0px;
+        margin-right: 10px;
+        margin-bottom: 0.1em;
+    }
+    
+    .logo
+    {
+        display: none;
+    }
+    
+    #credit_card_year
+    {
+        margin-left: 10px;
+    }
+    
+    .formControls
+    {
+        margin: 1em 3em;
+    
+        input, input.context, input.standalone, button, button.context, button.standalone
+        {
+            width: auto;
+            background-image: none;
+            background-position: none;
+            background-repeat: none;
+        }
+        
+        .next, .previous
+        {
+            background-image: none;
+            background-position: none;
+            background-repeat: none;
+        }
+        
+        .previous i
+        {
+            float: left !important;
+            margin-top: 4px;
+            margin-right: 5px;
+        }
+
+        .next i
+        {
+            float: right !important;
+            margin-top: 4px;
+            margin-left: 5px;
+        }
+    }
+    
+    .address .field 
+    {
+        .zip_city_wrap
+        {
+            width: 100%;
+        }
+        
+        .city
+        {
+            width: 81%;
+            margin-left: 2%;
+            float: none;
+        }
+    }
+}
+
+.portaltype-product
+{
+    .portlet.portletInfoBox .portletFooter
+    {
+        display: none;
+    }
+    
+    .buyViewlet
+    {
+        background-color: transparent;
+        
+        label
+        {
+            margin-top: 0.7em;
+            color: @nuwDarkGrey;
+        }
+        
+        .btn
+        {
+            float: right;
+        }
+        
+        .priceInfo
+        {
+            margin: 0 10px;
+            line-height: 30px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+}
+
+#content .productList
+{
+    margin: 0;
+
+    .portletItem
+    {
+        background-color: @nuwDarkGrey;
+        margin: 0 0 1em 0;
+    }
+
+    a
+    {
+        text-decoration: none;
+        
+        &:hover
+        {
+            .portletItem
+            {
+                background-color: lighten(@nuwDarkGrey, 5%);
+            }
+            
+            .title
+            {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .list
+    {
+        text-align: center;
+        margin-top: 1em;
+        
+        .portletProduct
+        {
+            width: 31%;
+            
+            .title
+            {
+                color: @nuwYellow;
+            }
+            
+            .description, .priceInfo
+            {
+                color: white;
+            }
+            
+            .image
+            {
+                height: 128px;
+                overflow: hidden;
+            }
+            
+            &.col2
+            {
+                @spacing: 3%;
+                margin-left: @spacing;
+                margin-right: @spacing;
+            }
+            
+            &.col3
+            {
+                float: left;
+            }
+        }
+    }
+}
+
+.portletShoppingCart
+{
+    a
+    {
+        color: white !important;
+    }
+    
+    table
+    {
+        margin-bottom: 10px;
+        width: 100%;
+        
+        thead
+        {
+            border-bottom: 2px solid lighten(@nuwDarkGrey, 10%);
+        }
+        
+        tfoot
+        {
+            border-top: 2px solid lighten(@nuwDarkGrey, 10%);
+        }
+        
+        .amount, .price
+        {
+            text-align: right;
+            padding-left: 5px;
+        }
+        
+        td.info
+        {
+            padding: 10px 0px !important;
+        }
+    }
+    
+    .cart-buttons a button
+    {
+        margin-left: 10px;
+        width: 45%;
+    }
+}
+
+#transactions-table
+{
+    td, th
+    {
+        padding: 0 15px 5px 0;
+    }
+}

@@ -1,0 +1,10 @@
+/* Extra Mixins for NUW site */
+.makeFluidRow() {
+  margin-left: @fluidGridGutterWidth * -1;
+  .clearfix();
+}
+.makeFluidColumn(@columns: 1, @offset: 0) {
+  float: left;
+  margin-left: (@fluidGridColumnWidth * @offset) + (@fluidGridGutterWidth * (@offset - 1)) + (@fluidGridGutterWidth * 2);
+  width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1));
+}

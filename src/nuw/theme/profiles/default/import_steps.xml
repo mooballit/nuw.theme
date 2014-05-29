@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<import-steps>
+  <import-step id="nuw.theme.install" version="1"
+               handler="nuw.theme.setuphandlers.install"
+               title="Setup the site">
+  </import-step>
+</import-steps>

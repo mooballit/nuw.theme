@@ -1,0 +1,240 @@
+#union-camp-carousel
+{
+    .content
+    {
+        color: @white;
+        
+        h1 > a
+        {
+            color: @nuwYellow;
+        }
+    }
+    
+    .pager
+    {
+        .pager-item
+        {
+            background: @nuwYellow;
+        }
+        .pager-item.active
+        {
+            background: #54626d;
+        }
+    }
+}   
+
+.worplace-campaigns
+{
+    .header, .item
+    {
+        margin-bottom: 2px;
+    }
+    .header
+    {
+        background: #480b1b;
+        padding: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: @headingsFontFamily;
+    }
+    
+    .item, .view-all
+    {
+        padding: 10px 20px;
+        background: #b71232;
+        
+        a
+        {
+            color: #fff;
+        }
+    }
+    
+    .items
+    {
+        text-transform: uppercase;
+        height: 254px;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    
+    .view-all
+    {
+        font-size: .85em;
+        margin-top: 2px;
+    }
+}
+
+#social-campaigns
+{
+    padding: 14px 0;
+    
+    .header
+    {
+        color: @nuwYellow;
+        margin-right: 5px;
+    }
+    
+    .carousel
+    {
+        width: 90%;
+        margin-bottom: 0;
+        
+        .carousel-inner
+        {
+            width: auto;
+            margin-top: 2px;
+        }
+    }
+    
+    .item
+    {
+        font-weight: bold;
+        text-transform: uppercase;
+        
+        a
+        {
+            color: #fff;
+        }
+    }
+    
+    .arrows
+    {
+        margin-top: -5px;
+        a
+        {
+            padding: 7px;
+            background: @nuwGrey;
+            display: inline-block;
+            .ie7-inline-block();
+            .border-radius( 5px );
+            
+            &:hover
+            {
+                background: lighten(@nuwGrey, 5%);
+            }
+        }
+    }
+}
+
+#content .frontpage-industry-listing
+{
+    margin-top: 40px;
+    
+    a:link, a:visited, a:hover
+    {
+        color: @nuwDarkGrey !important;
+    }
+    
+    a:hover div dl 
+    {   
+        dt
+        {
+            text-decoration: underline;
+        }
+        
+        dd
+        {
+            background-color: lighten(@nuwLightGrey, 5%);
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    }
+    
+    .listed-industry
+    {
+        margin-bottom: 30px;
+        margin-left: 64px + 10px;
+        
+        dt
+        {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        dd
+        {
+            margin: 0;
+            color: @grayLight;
+            line-height: 1.2em;
+            padding: 10px;
+        }
+    }
+}
+
+.siteroot-default-page
+{
+    #banner > div
+    {
+        height: 250px;
+        
+        position: relative;
+        
+        #banner-carousel
+        {
+            position: absolute;
+            bottom: 0;
+            margin: 0;
+            z-index: -1;
+            
+            &.carousel.carousel-fade
+            {
+                .item
+                {
+                  -webkit-transition: opacity 4s ease-in-out;
+                  -moz-transition: opacity 4s ease-in-out;
+                  -ms-transition: opacity 4s ease-in-out;
+                  -o-transition: opacity 4s ease-in-out;
+                  transition: opacity 4s ease-in-out;
+                }
+                
+                .active.left,
+                .active.right
+                {
+                  left: 0;
+                  z-index: 2;
+                  opacity: 0;
+                  filter: alpha(opacity=0);
+                }
+                
+                .next,
+                .prev
+                {
+                  left: 0;
+                  z-index: 1;
+                }
+            }
+        }
+    }
+    
+    #portal-column-content
+    {
+        @size: 1px;
+        @colour: @nuwGrey;
+        background: -webkit-gradient(linear, right top, right bottom, from(@colour), to(@colour));
+        background: -moz-linear-gradient(top,  @colour,  @colour);
+        background: -ms-linear-gradient(top, @colour, @colour);
+        background: linear-gradient(to bottom, @colour, @colour);
+        background-size: @size @size;
+        background-position: 100% 0%;
+        background-repeat:repeat-y;
+        background-clip: border-box;
+    }
+    
+    #header #unity-blurb
+    {
+        margin-top: -35px;
+        margin-bottom: 10px;
+    }
+}
+
+div.overlay-ajax.splash-popup
+{
+    width: 800px;
+    
+    div.pb-ajax > div
+    {
+        width: auto;
+        padding: 0;
+    }
+}

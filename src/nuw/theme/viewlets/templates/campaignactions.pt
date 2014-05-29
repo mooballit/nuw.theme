@@ -1,0 +1,31 @@
+<div class="campaign-actions">
+    <dl>
+        <dt data-toggle="collapse" data-target="#support-content" data-parent=".campaign-actions">Support<span><i class="arrow-icon right-dark-grey"></i></span></dt>
+        <dd id="support-content" class="collapse">Content</dd>
+    </dl>
+    <dl>
+        <dt data-toggle="collapse" data-target="#donate-content" data-parent=".campaign-actions">Donate<span><i class="arrow-icon right-dark-grey"></span></dt>
+        <dd id="donate-content" class="collapse">Content</dd>
+    </dl>
+    <dl>
+        <dt data-toggle="collapse" data-target="#petition-content" data-parent=".campaign-actions">Sign the Petition<span><i class="arrow-icon right-dark-grey"></span></dt>
+        <dd id="petition-content" class="collapse">Content</dd>
+    </dl>
+    <dl>
+        <dt data-toggle="collapse" data-target="#tellfriend-content" data-parent=".campaign-actions">Tell a Friend<span><i class="arrow-icon right-dark-grey"></span></dt>
+        <dd id="tellfriend-content" class="collapse">Content</dd>
+    </dl>
+    <script type="text/javascript">
+        $( function () {
+            $( '.campaign-actions dd' ).on( 'show', function () {
+                $( this ).parent().find( 'dt' ).addClass( 'expanded' );
+                $( this ).parent().find( 'dt i' ).removeClass( 'right-dark-grey' ).addClass( 'down-dark-grey' );
+            } ).on( 'hide', function () {
+                $( this ).parent().find( 'dt' ).removeClass( 'expanded' );
+                $( this ).parent().find( 'dt i' ).removeClass( 'down-dark-grey' ).addClass( 'right-dark-grey' );
+            } );
+            
+        } );
+    </script>
+</div>
+<tal:social-icons tal:replace="structure context/@@socialiconssmall" />

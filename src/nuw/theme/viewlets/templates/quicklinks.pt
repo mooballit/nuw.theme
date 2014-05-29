@@ -1,0 +1,9 @@
+<div class="quick-links">
+    <h2>Quick Links</h2>
+    <ul>
+        <a tal:attributes="href string:${context/portal_url}/nuw-assist"><li>NUW Assist<i class="arrow-icon right-white"></i></li></a>
+        <a tal:attributes="href string:${context/portal_url}/join"><li>Join NUW<i class="arrow-icon right-white"></i></li></a>
+        <a tal:attributes="href string:${context/portal_url}/training"><li>Training Education<i class="arrow-icon right-white"></i></li></a>
+        <a tal:attributes="href string:${context/portal_url}/interpreter"><li>Interpreter Service<i class="arrow-icon right-white"></i></li></a>
+    </ul>
+</div>

@@ -1,0 +1,7 @@
+<div id="portal-logo">
+    <a metal:define-macro="portal_logo"
+       accesskey="1"
+       tal:attributes="href view/navigation_root_url"
+       i18n:domain="plone">
+        <img src="" tal:attributes="src string:${context/portal_url}/++theme++nuw.theme/images/nuw-logo.jpg" alt="NUW" /></a>
+</div>

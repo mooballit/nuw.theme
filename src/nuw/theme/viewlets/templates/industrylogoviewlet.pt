@@ -1,0 +1,7 @@
+<div class="industry-logo in-red-bar" tal:condition="viewlet/industry_id">
+    <i tal:attributes="class string:industry-icon white ${viewlet/industry_id}" />
+    <h2 tal:content="viewlet/industry_title"></h2>
+</div>
+<div class="industry-worker in-red-bar pull-right" tal:condition="viewlet/industry_id">
+    <i tal:attributes="class string:industry-header ${viewlet/industry_id}" />
+</div>

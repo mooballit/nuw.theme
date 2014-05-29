@@ -1,0 +1,232 @@
+body.section-members-area
+{
+
+    #content-section .content-section
+    {
+        @size: 1px;
+        @colour: @nuwDarkGrey;
+        background: -webkit-gradient(linear, right top, right bottom, from(@colour), to(@colour));
+        background: -moz-linear-gradient(top,  @colour,  @colour);
+        background: -ms-linear-gradient(top, @colour, @colour);
+        background: linear-gradient(to bottom, @colour, @colour);
+        background-size: @size @size;
+        background-position: 241px 0;
+        background-repeat:repeat-y;
+        background-clip: border-box;
+    }
+    
+    .template-manage-portlets
+    {
+        background: none;
+    }
+    
+    #header #banner > div
+    {
+        height: auto;
+        background: none;
+    }
+    
+    /* Navigation */
+    #portal-column-one dl.portletNavigationTree
+    {
+        dt.portletHeader
+        {
+            background: #FFF;
+            padding: 0 0 5px 0;
+            
+            a
+            {
+                pointer-events: none;
+                cursor: default;
+            }
+            
+            a.tile:link, a.tile:visited
+            {
+                font-family: @headingsFontFamily;
+                font-size: 24px;
+                font-weight: bold;
+                color: @nuwGreen;
+            }
+            
+            a.tile:hover
+            {
+                color: @nuwGreen !important;
+            }
+        }
+        
+        a
+        {
+            font-family: @baseFontFamily;
+            font-size: 14px;
+            color: @nuwGreen !important;
+            
+            &:hover, &.navTreeCurrentItem
+            {
+                background-color: @membersNavLinkColorHover !important;
+            }
+        }
+    }
+}
+
+/* Payment Methods */
+.template-payment-methods
+{
+    .payment_methods
+    {
+        .dummy_card
+        {
+            background-color: @nuwLightGrey;
+            padding: 30px 15px 40px 15px;
+            border-radius: 10px;
+            height: 46px;
+            width: 162px;
+            
+            #card_logo
+            {
+                position: relative;
+                float: right;
+                bottom: 10px
+            }
+        }
+
+        .expired
+        {
+            background-color: @nuwRed !important;
+            color: white;
+        }
+
+        .default_card
+        {
+            color: @nuwGreen2;
+        }
+        
+        .card-link
+        {
+            margin-right: 10px;
+        }
+        
+        #card_logo
+        {
+            .icon-sheet(44px, 31px, url('++theme++nuw.theme/images/titan-visa-master-sprites.png'));
+            
+            &.visa
+            {
+                .icon-sheet .icon(0, 0);
+            }
+            
+            &.master
+            {
+                .icon-sheet .icon(1, 1);
+            }
+        }
+    }
+
+    .payment-form
+    {
+        #credit_card_first_name, #credit_card_last_name
+        {
+            width: 21.6em;
+        }
+        
+        #credit_card_number
+        {
+            width: 180px;
+            margin-right: 35px;
+        }
+        
+        #credit_card_verification_value
+        {
+            width: 5.1em;
+            margin-right: 10px;
+        }
+        
+        #credit_card_year, #credit_card_month
+        {
+            margin-right: 10px;
+        }
+        
+        .cvc_label
+        {
+            position: relative;
+            width: 80px;
+            margin-top: 3px;
+            margin-right: 5px;
+            color: @nuwDarkGrey;
+        }
+        
+        .btn
+        {
+            margin-left: 50%;
+        }
+    }
+}
+
+/* Worksite Agreements */
+.template-worksite-agreements
+{
+    .record
+    {
+        .dates, .notes
+        {
+            margin-bottom: 10px;
+        }
+        
+        .enddate
+        {
+            margin-left: 10px;
+        }
+    }
+
+    #content .record ul.files
+    {
+        list-style-type: none;
+        
+        li i
+        {
+            margin-top: 0.24em;
+            margin-left: 0;
+        }
+    }
+}
+
+/* Subscriptions */
+.template-subscriptions
+{
+    #campaign-subscriptions
+    {
+        ol.campaigns
+        {
+            list-style-type: none;
+            margin-left: 0;
+        }
+    }
+    
+    #content fieldset
+    {
+        border: none;
+    }
+}
+
+/* Contact Details */
+.template-contact-details
+{
+    .portrait
+    {
+        height: 3em;
+    }
+
+    #form-widgets-dob-hour, #form-widgets-dob-min
+    {
+        display: none;
+    }
+    
+    .row-fluid [class*="span"]
+    {
+        min-height: 0;
+    }
+
+    #personal-details .field input[type="text"][name$=".title"], #personal-details input#title, #personal-details textarea
+    {
+        width: 20em;
+    }
+}

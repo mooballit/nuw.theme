@@ -1,0 +1,631 @@
+/* Styles for Campaign content type */
+#content .campaign.detail h2
+{
+    color: @nuwRed !important;
+}
+
+#content .campaign-news, #content .campaign-wall
+{
+    h2, .post-images h4
+    {
+        color: @nuwRed !important;
+        text-transform: uppercase !important;
+        font-family: @headingsFontFamily !important;
+    }
+}
+
+.campaign.detail
+{
+    .image
+    {
+        background: @white;
+        padding: 10px;
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 30px;
+        .box-shadow( 1px 1px 3px #999 );
+    }
+    
+    h1
+    {
+        margin-bottom: 30px;
+    }
+    
+}
+
+.campaign-news
+{
+    .news-item
+    {
+        padding: 15px;
+        border-bottom: 1px dotted @nuwDarkGrey;
+        
+        
+        &:hover
+        {
+            background: @nuwLightGrey;
+        }
+        
+        .news-title
+        {
+            color: @nuwRed;
+            font-weight: bold;
+        }
+        
+        .read-more
+        {
+            background: lighten(@nuwGrey, 10%);
+            background-image: none;
+            color: white;
+            font-family: @headingsFontFamily;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: none;
+            font-size: 10px;
+            line-height: 10px;
+            &:hover
+            {
+                background: @nuwGrey;
+            }
+        }
+        
+        .news-body
+        {
+            display: none;
+        }
+    }
+    
+    .more-news
+    {
+        color: white !important;
+        margin-top: 10px;
+    }
+}
+
+
+.campaign.listed
+{
+    margin-bottom: 20px;
+    
+    img
+    {
+        float: left;
+    }
+    
+    .campaign-content
+    {
+        margin-left: 220px;
+    }
+}
+
+.campaign-actions
+{
+    dl
+    {
+        background: @nuwDarkGrey;
+        .border-radius( 5px );
+        padding: 10px;
+        margin-bottom: 10px;
+        
+        dt
+        {
+            color: @nuwGrey;
+            font-family: @headingsFontFamily;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            
+            span
+            {
+                float: right;
+                padding: 5px;
+                background-color: @nuwGrey;
+                .border-radius( 3px );
+            }
+        }
+        
+        dt.expanded
+        {
+            color: @nuwYellow;
+            margin-bottom: 10px;
+            
+            span
+            {
+                background-color: @nuwYellow;
+            }
+        }
+        
+        dd
+        {
+            color: @white;
+            margin: 0;
+        }
+    }
+}
+
+/* Donation Portlet and View */
+.template-donate
+{
+    .general-error
+    {
+        background-color: #FFDDCC;
+        border: 1px solid red;
+        margin: 1em 0;
+        padding: 0.5em;
+    }
+
+    .donation-section
+    {
+        background: @nuwLightGrey;
+        .border-radius( 10px );
+        padding: 20px;
+        
+        .row-fluid
+        {
+            input[type="text"]:first-child
+            {
+                margin-right: 2%;
+            }
+            
+            input[type="text"]
+            {
+                width: 49%;
+            }
+        }
+
+        label
+        {
+            display: block;
+        }
+        
+        .payment-methods
+        {
+            width: 100%;
+        }
+        
+        .field
+        {
+            clear: none;
+            float: left;
+            margin-bottom: 0;
+            
+            &.card-number input
+            {
+                width: 313px;
+            }
+            
+            .expiry, .cvn
+            {
+                display: inline-block;
+                
+                select, input
+                {
+                    width: 95px;
+                    margin-right: 10px;
+                    margin-left: 0px;
+                    margin-bottom: 0px;
+                }
+            }
+            
+            .expiry
+            {
+                width: 218px;
+            }
+            
+            .cvn
+            {
+                width: 100px;
+                
+                label
+                {
+                    margin-bottom: 6px;
+                }
+            }
+        }
+        
+        .form-actions
+        {
+            clear: both;
+        }
+        
+        form button[type="submit"]
+        {
+            margin-top: -31px;
+        }
+        
+        &.choose-donation-amount form button[type="submit"]
+        {
+            margin-top: 0;
+        }
+    }
+    
+    .donate-or
+    {
+        text-align: center;
+        font-size: 20px;
+        font-family: @headingsFontFamily;
+        color: @headingsColor;
+        padding: 20px;
+    }
+}
+
+dl.portlet.portletPhotoGallery
+{
+    @margin-size: 3px;
+    dt.portletHeader
+    {
+        border-bottom: none;
+    }
+    
+    dd.portletItem
+    {
+        padding: 0;
+        margin-top: @margin-size;
+        
+        a:visited, a:link, a:hover
+        {
+            text-decoration: none;
+        }
+
+        .tileImage
+        {
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: transparent;
+            
+            float:left;
+            
+            width: 70px !important;
+            height: 70px !important;
+            margin: @margin-size;
+            
+            &.firstItem, &.lastItem
+            {
+                margin: @margin-size 0;
+            }
+            
+            &.firstItem
+            {
+                margin-right: @margin-size+1;
+            }
+            
+            &.lastItem
+            {
+                margin-left: @margin-size+1;
+            }
+        }
+    }
+    
+    dd.portletFooter
+    {
+        margin-top: @margin-size;
+        border-top: none;
+    }
+}
+
+.choose-donation-amount, .donation-portlet, .portletPetition, .donation-section, .portletShoppingCart,
+{
+    padding: 10px 20px 20px 20px !important;
+    background-color: @nuwDarkGrey !important;
+    color: white;
+    font-size: 12px;
+    margin-bottom: 20px;
+    
+    h3
+    {
+        color: @nuwYellow;
+        margin: 0;
+    }
+    
+    form
+    {
+        margin: 0;
+    }
+    
+    .amounts
+    {
+        label
+        {
+            clear: none;
+            float: left;
+            width: 85px;
+            font-weight: bold;
+            
+            input[type=radio]
+            {
+                display: inline;
+                margin-right: 5px;
+                margin-top: 0px;
+                margin-bottom: 0.2em;
+            }
+        }
+    }
+    
+    .portlet-footer
+    {
+        margin-top: 10px;
+        
+        .custom-label
+        {
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        
+        .custom-donation
+        {
+            width: 23% !important;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.subscription-portlet
+{
+    margin-bottom: 20px;
+    
+    .portlet-button
+    {
+        width: 274px;
+    }
+
+    #subscribe-form
+    {
+        color: @textColor;
+        form
+        {
+            margin: 0;
+        }
+    }
+}
+
+#industry-breadcrumbs
+{
+    ul.breadcrumb
+    {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}
+
+.portaltype-nuw-types-petition #signee-table 
+{
+    td, th
+    {
+        padding: 0 15px 5px 0;
+    }
+}
+
+.portletPetition
+{
+    .petition-details
+    {
+        margin-bottom: 10px;
+    }
+    
+    #show-petition-message
+    {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .petition-message-popover
+    {
+        margin-left: -65px;
+        
+        p
+        {
+            margin-bottom: 5px !important;
+        }
+    }
+
+    form
+    {
+        input[type="text"]
+        {
+            width: 95%;
+        }
+        
+        select
+        {
+            width: 100%;
+        }
+        
+        input[type="checkbox"]
+        {
+            margin: 0;
+            margin-bottom: 0.2em;
+        }
+        
+        label.checkbox-label
+        {
+            display: inline-block;
+            margin-bottom: 0;
+            margin-left: 10px;
+        }
+        
+        fieldset
+        {
+            position: relative;
+            @tab-adjust: 10.75em;
+            
+            label.error
+            {
+                color: white;
+                font-size: 80%;
+                line-height: 1.5em;
+                background-color: @nuwGrey;
+                padding: 0.5em;
+                -webkit-border-radius: 0.5em;
+                -moz-border-radius: 0.5em;
+                border-radius: 0.5em;
+                float: right;
+                left: 70%;
+                position: absolute;
+                margin-top: -3.85em;
+                z-index: 100;
+                width: 18em;
+                text-align: center;
+            }
+            
+            label.error:before
+            {
+                position: absolute;
+                content: '.';
+                color: transparent;
+                @border-thickness: 0.75em;
+                border-right: @border-thickness solid @nuwGrey;
+                border-top: @border-thickness solid transparent;
+                border-bottom: @border-thickness solid transparent;
+                width: 0;
+                height: 0;
+                left: -0.70em;
+            }
+        }
+        
+        .signpetition-checkbox
+        {
+            @adjustment: 0.3em;
+            margin-top: @adjustment;
+            
+            button[type="submit"]
+            {
+                margin-top: -@adjustment;
+                float: right;
+            }
+        }
+    }
+}
+
+#union-camp-carousel
+{
+    .next .image, .prev .image
+    {
+        margin-top: 10px;
+    }
+}
+
+#industry-campaigns-carousel
+{
+    .next .image, .prev .image
+    {
+        margin-top: 18px;
+    }
+}
+
+#content .campaign-carousel, .campaign-carousel
+{
+    .image
+    {
+        background: @white;
+        padding: 10px;
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 30px;
+        .box-shadow( 2px 2px 3px @nuwGrey );
+                
+        float: left;
+
+    }
+    
+    .content
+    {
+        margin-left: 278px + 20px;
+
+        h1 > a
+        {
+            color: @nuwRed;
+            border: 0;
+        }
+    }
+    
+    .carousel
+    {
+        margin-bottom: 0;
+    }
+    
+    .pager
+    {
+        clear: both;
+        margin: 0;
+        
+        .pager-item
+        {
+            width: 14px;
+            height: 14px;
+            background: #9fa9b2;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .pager-item.active
+        {
+            background: #54626d;
+        }
+    }
+}   
+
+.campaign-twitter-feed-portlet
+{
+    margin-bottom: 20px;
+    
+    p.description
+    {
+        padding: 10px 10px 0 10px;
+        margin: 0;
+    }
+    
+    dd.portletItem a
+    {
+        &:link, &:visited, &:hover
+        {
+            color: @nuwRed !important;
+        }
+    }
+    
+    dd.portletFooter
+    {
+        font-size: 12px;
+    }
+    
+    .tweets
+    {
+        font-size: 80%;
+        
+        ul.tweet_list
+        {
+            margin: 0;
+            
+            li
+            {
+                padding: 10px 0;
+                border-top: 1px dotted @nuwDarkGrey;
+                display: block;
+                
+                &.tweet_first
+                {
+                    border: 0;
+                    margin-top: 0px;
+                    padding-top: 0px;
+                }
+                
+                .tweet_avatar
+                {
+                    float: left;
+                    margin: 5px 5px 0 0;
+                }
+                
+                .tweet_time
+                {
+                    font-weight: bold;
+                    display: block;
+                }
+                
+                &:last-child
+                {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}

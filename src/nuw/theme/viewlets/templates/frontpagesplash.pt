@@ -1,0 +1,3 @@
+<a id="frontpage-splash" tal:define="url view/get_splash_url" tal:attributes="href url; title python:(url != '' and url != None and 'Click here for more!') or ''">
+    <img tal:attributes="src string:${context/absolute_url}/splash_image; height string:600; width string:800;">
+</a>

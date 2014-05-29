@@ -1,0 +1,24 @@
+<div class="frontpage-industry-listing">
+    <tal:industry tal:define="inds viewlet/get_industries" tal:repeat="industry python: [ ( inds[i], inds[i+1] if i+1 < len( inds ) else None ) for i in range( len( inds ) )[::2] ]">
+    <div class="row-fluid">
+        <tal:pair tal:repeat="item industry">
+            <a tal:condition="item" tal:attributes="href item/getURL" >
+                <div tal:condition="repeat/item/even" class="span5">
+                    <i tal:attributes="class string:industry-icon ${item/id}"></i>
+                    <dl class="listed-industry">
+                        <dt tal:content="item/Title"></dt>
+                        <dd tal:content="item/Description"></dd>
+                    </dl>
+                </div>
+                <div tal:condition="repeat/item/odd" class="span5 offset1">
+                    <i tal:attributes="class string:industry-icon ${item/id}"></i>
+                    <dl class="listed-industry">
+                        <dt tal:content="item/Title"></dt>
+                        <dd tal:content="item/Description"></dd>
+                    </dl>
+                </div>
+            </a>
+        </tal:pair>
+    </div>
+    </tal:industry>
+</div>

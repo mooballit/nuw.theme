@@ -1,0 +1,193 @@
+.icon-sheet( @w, @h, @url )
+{
+    display: inline-block;
+    .ie7-inline-block();
+    width: @w;
+    height: @h;
+    background: @url;
+    float: left;
+    
+    .icon( @col, @row )
+    {
+        background-position: -@col * @w -@row * @h;
+    }
+}
+
+.industry-icon
+{
+    .icon-sheet( 60px, 60px, url( /++theme++nuw.theme/images/industry-icons-home.png ) );
+    
+    &.white
+    {
+        background: url( /++theme++nuw.theme/images/industry-icons-white.png );
+    }
+
+    /* The individual Icons */
+    &.defence-logistics
+    {
+        .icon-sheet .icon( 0, 0 );
+    }
+    &.food-manufacturing
+    {
+        .icon-sheet .icon( 0, 1 );
+    }
+    &.general-manufacturing
+    {
+        .icon-sheet .icon( 0, 2 );
+    }
+    &.cold-storage
+    {
+        .icon-sheet .icon( 0, 3 );
+    }
+    &.pharmaceutical
+    {
+        .icon-sheet .icon( 0, 4 );
+    }
+    &.poultry
+    {
+        .icon-sheet .icon( 0, 5 );
+    }
+    &.warehousing-distribution
+    {
+        .icon-sheet .icon( 0, 6 );
+    }
+    &.market-research-call-centre
+    {
+        .icon-sheet .icon( 0, 7 );
+    }
+    &.sales-marketing-merchandising
+    {
+        .icon-sheet .icon( 0, 8 );
+    }
+    &.dairy-cheese-making
+    {
+        .icon-sheet .icon( 0, 9 );
+    }
+    &.oil
+    {
+        .icon-sheet .icon( 0, 10);
+    }
+    &.food-services
+    {
+        .icon-sheet .icon( 0, 11);
+    }
+}
+
+.arrow-icon
+{
+    .icon-sheet( 10px, 10px, url( /++theme++nuw.theme/images/button-arrows-10x10.png ) );
+    
+    &.right-white
+    {
+        .icon-sheet .icon( 0, 0 );
+    }
+
+    &.right-grey
+    {
+        .icon-sheet .icon( 1, 0 );
+    }
+
+    &.right-dark-grey
+    {
+        .icon-sheet .icon( 2, 0 );
+    }
+
+    &.down-dark-grey
+    {
+        .icon-sheet .icon( 3, 0 );
+    }
+
+    &.left-white
+    {
+        .icon-sheet .icon( 0, 1 );
+    }
+
+    &.left-grey
+    {
+        .icon-sheet .icon( 1, 1 );
+    }
+
+    &.left-dark-grey
+    {
+        .icon-sheet .icon( 2, 1 );
+    }
+    
+    &.right-large
+    {
+        background: url( /++theme++nuw.theme/images/main-nav-arrow.jpg );
+        width: 10px;
+        height: 15px;
+    }
+}
+
+.social-icon-sheet()
+{
+    &.letter-full
+    {
+        .icon-sheet .icon( 0, 0 );
+    }
+    
+    &.button /* Not too sure on this one... */
+    {
+        .icon-sheet .icon( 1, 0 );
+    }
+    
+    &.phone
+    {
+        .icon-sheet .icon( 2, 0 );
+    }
+    
+    &.letter-empty
+    {
+        .icon-sheet .icon( 3, 0 );
+    }
+    
+    &.fax
+    {
+        .icon-sheet .icon( 4, 0 );
+    }
+    
+    &.facebook
+    {
+        .icon-sheet .icon( 5, 0 );
+    }
+    
+    &.twitter
+    {
+        .icon-sheet .icon( 6, 0 );
+    }
+    
+    &.google-plus
+    {
+        .icon-sheet .icon( 7, 0 );
+    }
+    
+    &.linkedin
+    {
+        .icon-sheet .icon( 8, 0 );
+    }
+    
+    &.plus
+    {
+        .icon-sheet .icon( 9, 0 );
+    }
+}
+
+.social-icon
+{
+    .icon-sheet( 48px, 48px, url( /++theme++nuw.theme/images/social-icons-lrg-48x48.png ) );
+    
+    .social-icon-sheet();
+}
+
+.social-icon.small
+{    
+    .icon-sheet( 24px, 24px, url( /++theme++nuw.theme/images/social-icons-sml-24x24.png ) );
+
+    .social-icon-sheet();
+}
+
+.search-icon
+{
+    .icon-sheet( 12px, 12px, url( /++theme++nuw.theme/images/site-serach-icon.png ) );
+}

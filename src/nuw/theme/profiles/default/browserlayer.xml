@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+ <layer
+     name="nuw.theme"
+     interface="nuw.theme.interfaces.IThemeSpecific"
+     />
+</layers>

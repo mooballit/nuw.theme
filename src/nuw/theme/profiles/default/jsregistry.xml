@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts">
+ <javascript
+    id="++bootstrap++js/bootstrap-carousel.js"/>
+ <javascript
+    id="++bootstrap++js/bootstrap-popover.js"/>
+ <javascript
+    id="++bootstrap++js/bootstrap-transition.js"/>
+ <javascript
+    id="++bootstrap++js/bootstrap-modal.js" compression="none"/>
+ <javascript
+    id="++theme++nuw.theme/javascript/splash_popup.js"/>
+ <javascript
+    id="++theme++nuw.theme/javascript/Placeholders.js" cookable="False"
+    cacheable="False"/>
+ <javascript
+    id="collective.js.jqueryui.custom.min.js" cookable="False"/>
+</object>

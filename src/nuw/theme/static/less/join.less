@@ -1,0 +1,894 @@
+.template-verifymember\.html #content, .template-password\.html #content
+{
+    float: right;
+    padding: 20px 30px;
+
+    span.label, h1, p.discreet, span.formHelp
+    {
+        display: none;
+    }
+
+    #formfield-form-widgets-email span.formHelp
+    {
+        display: block;
+    }
+
+    div.field
+    {
+        span.required::after
+        {
+            content: none;
+        }
+    }
+
+    .btn
+    {
+        float: right;
+    }
+
+    select
+    {
+        width: auto !important;
+    }
+
+    input.text-widget, input.password-widget
+    {
+        width: 96.5%;
+    }
+}
+
+.activationGuideViewlet, .template-activation\.html #content
+{
+    float: left;
+    padding: 20px;
+
+    h1
+    {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    h4, h6
+    {
+        margin-top: 0;
+    }
+
+    p.discreet
+    {
+        font-size: 14px;
+        font-family: @baseFontFamily;
+        color: @nuwDarkGrey;
+    }
+
+    .currentStep
+    {
+        padding: 5px 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background-color: @nuwYellow;
+    }
+
+    input.text-widget
+    {
+        width: 96.5%;
+    }
+
+    .btn
+    {
+        margin-left: 10px;
+        float: right;
+    }
+}
+
+.activationGuideViewlet, .template-activation\.html #content, .template-verifymember\.html #content, .template-password\.html #content
+{
+    width: 44%;
+    margin-bottom: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: @nuwLightGrey;
+
+    div.formControls
+    {
+        margin: 0;
+
+        input
+        {
+            margin-right: 0;
+        }
+    }
+
+    .btn
+    {
+        background-color: @nuwRed;
+    }
+}
+
+.template-joinwizard\.html
+{
+    @input-width: 200px;
+
+    #content p.discreet
+    {
+        color: @nuwDarkGrey;
+        font-size: 100%;
+    }
+
+    ul.wizard-steps
+    {
+        display: none;
+    }
+
+    form h2
+    {
+        display: none;
+    }
+
+    div.field
+    {
+        margin-bottom: 0;
+    }
+
+    .formControls.wizard-buttons
+    {
+        text-align: right;
+
+        input[value="Cancel"]
+        {
+            display: none;
+        }
+
+        input[value="Continue"]
+        {
+            background-color: @nuwRed;
+
+            &:hover
+            {
+                background-color: lighten(@nuwRed, 10%);
+            }
+        }
+    }
+
+    #fieldset-personalinfo, #fieldset-workinformation
+    {
+        background-color: @nuwLightGrey;
+        padding: 10px 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border-top: none;
+        margin-top: 40px;
+        width: auto;
+
+        legend
+        {
+            border: none;
+            margin: 0;
+            margin-left: -20px;
+            font-family: @baseFontFamily;
+            font-size: 20px;
+            line-height: 1.5em;
+            text-transform: none;
+            color: @nuwDarkGrey;
+            top: -20px;
+            margin-top: -30px;
+            position: relative;
+            font-weight: bold;
+        }
+
+        span.formHelp
+        {
+            display: none;
+        }
+
+        div.fieldErrorBox
+        {
+            display: inline-block;
+        }
+
+        div.field.error div.fieldErrorBox
+        {
+            display: block;
+            float: right;
+            line-height: 20px;
+            margin: 5px 0;
+        }
+
+        #formfield-personalinfo-widgets-dob.field.error div.fieldErrorBox
+        {
+            float: none;
+
+            div.error
+            {
+                text-align: right;
+            }
+        }
+
+        div.field span.required::after
+        {
+            color: transparent;
+        }
+
+        label
+        {
+            display: inline-block;
+            margin-top: 5px;
+
+            span.label.label-important
+            {
+                display: none;
+            }
+        }
+    }
+
+    #fieldset-personalinfo
+    {
+        #formfield-personalinfo-widgets-dob
+        {
+            text-align: right;
+
+            label
+            {
+                float: left;
+            }
+
+            a.caltrigger
+            {
+                display: none !important;
+            }
+        }
+
+        div.field
+        {
+            display: inline-block;
+            width: 38%;
+            margin-right: 50px;
+
+            input, textarea, select
+            {
+                display: inline-block;
+                width: @input-width;
+                float: right;
+            }
+
+            textarea
+            {
+                height: 20px;
+                resize: none;
+            }
+
+            select
+            {
+                width: @input-width + 14px;
+            }
+
+            #personalinfo-widgets-dob-day, #personalinfo-widgets-dob-year
+            {
+                width: 35px;
+                float: none;
+            }
+
+            #personalinfo-widgets-dob-month
+            {
+                width: 95px;
+                float: none;
+            }
+        }
+    }
+
+    #fieldset-workinformation
+    {
+        #formfield-workinformation-widgets-employmenttype
+        {
+            label
+            {
+                margin-right: 5px;
+            }
+
+            span.option
+            {
+                display: inline-block;
+            }
+        }
+
+        #formfield-workinformation-widgets-worksite_id, #formfield-workinformation-widgets-agency
+        {
+            label
+            {
+                margin-right: 65px;
+            }
+
+            input[type="text"]
+            {
+                display: inline-block;
+                width: @input-width;
+            }
+        }
+
+        #formfield-workinformation-widgets-agency label
+        {
+            margin-right: 75px;
+        }
+
+        #workinformation-widgets-worksite_id-autocomplete, #workinformation-widgets-agency-autocomplete
+        {
+            display: inline-block;
+
+            div.querySelectSearch label
+            {
+                display: none;
+            }
+        }
+
+        span.option input[type="radio"]
+        {
+            margin-top: 0;
+        }
+
+        span.option
+        {
+            margin-right: 10px;
+
+            input
+            {
+                margin-right: 5px;
+            }
+        }
+
+        span.label
+        {
+            background-color: transparent;
+            padding: 0;
+            color: @nuwDarkGrey;
+            text-shadow: none;
+            font-weight: normal;
+        }
+
+    }
+
+    #wizard-step-confirmdetails
+    {
+        #fieldset-workinformation, #fieldset-personalinfo
+        {
+            span
+            {
+                &.textline-field, &.text-field, &.selected-option, &.date-field
+                {
+                    color: @nuwRed;
+                    width: @input-width;
+                    text-align: left;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        #fieldset-personalinfo
+        {
+            span
+            {
+                &.textline-field, &.text-field, &.selected-option, &.date-field
+                {
+                    float: right;
+                    top: 0.4em;
+                    position: relative;
+                }
+            }
+
+            #formfield-personalinfo-widgets-dob
+            {
+                text-align: left;
+
+                label
+                {
+                    float: none;
+                }
+            }
+        }
+    }
+}
+
+.template-join_payment\.html
+{
+    h2
+    {
+        font-family: OpenSans, Sans;
+        font-size: 20px;
+        line-height: 1.5em;
+        text-transform: none;
+        color: @nuwDarkGrey;
+        font-weight: bold;
+    }
+
+    div.field
+    {
+        margin-bottom: 0;
+    }
+
+    span.label
+    {
+        background-color: transparent;
+        padding: 0;
+        color: @nuwDarkGrey;
+        text-shadow: none;
+        font-weight: normal;
+
+        &.label-important
+        {
+            display: none;
+        }
+    }
+
+    label
+    {
+        margin-top: 5px;
+
+        &.details-header
+        {
+            margin-top: 30px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+    }
+
+    span.option
+    {
+        margin-right: 10px;
+
+        input
+        {
+            margin-right: 5px;
+        }
+    }
+
+    .controlgroup.submit-button
+    {
+        margin: 1em;
+
+        .controls
+        {
+            text-align: right;
+            margin-right: 10px;
+
+            input
+            {
+                background-color: @nuwRed;
+
+                &:hover
+                {
+                    background-color: lighten(@nuwRed, 10%);
+                }
+            }
+        }
+    }
+
+    #frequency
+    {
+        width: 23%;
+
+        #fees label
+        {
+            font-weight: bold;
+        }
+
+        #frequency-label
+        {
+            margin-top: 5px;
+
+            label
+            {
+                top: 5px;
+                position: relative;
+            }
+        }
+
+        span.fee, select
+        {
+            width: 100px;
+            float: right;
+        }
+
+        span.price
+        {
+            color: @nuwRed;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    #card_number
+    {
+        input
+        {
+            width: 253px;
+            margin-left: 10px;
+            margin-bottom: 0;
+        }
+
+        img
+        {
+            margin-left: 10px;
+        }
+
+        div.field
+        {
+            margin-bottom: 5px;
+        }
+    }
+
+    #card_details
+    {
+        div.field
+        {
+            display: inline-block;
+            margin-bottom: 0;
+
+            div.widget, input, label
+            {
+                display: inline-block;
+            }
+
+            div.widget, input
+            {
+                float: right;
+                margin-bottom: 0;
+
+                select
+                {
+                    width: 95px;
+                    margin: 0;
+                    margin-right: 10px;
+                }
+            }
+
+            &.expiry
+            {
+                width: 35.3%;
+            }
+
+            &.cvc
+            {
+                width: 17%;
+            }
+
+            input
+            {
+                width: 95px;
+            }
+        }
+    }
+
+    #content fieldset
+    {
+        background-color: @nuwLightGrey;
+        padding: 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: none;
+        border-style: none;
+        width: auto;
+    }
+}
+
+#viewlet-above-content .activationHeaderViewlet
+{
+    margin-bottom: 20px;
+
+    div.description
+    {
+        margin-bottom: 20px;
+    }
+
+    .styledbox
+    {
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        background-color: @nuwLightGrey;
+        padding: 20px;
+        height: 174px;
+
+        div.header
+        {
+            height: 48px;
+            margin-bottom: 20px;
+
+            label
+            {
+                line-height: 48px;
+                font-size: 22px;
+                font-weight: bold;
+                margin-left: 68px;
+            }
+        }
+
+        p.discreet
+        {
+            height: 4em;
+            margin-bottom: 20px;
+
+            a:link, a:hover, a:visited
+            {
+                color: @nuwRed;
+                font-weight: bold;
+            }
+        }
+
+        strong
+        {
+            color: @nuwRed;
+            font-size: 22px;
+
+            a
+            {
+                &:link, &:hover, &:visited
+                {
+                    color: @nuwRed;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        a.btn
+        {
+            background-color: @nuwRed;
+            width: 150px;
+
+            &:link, &:hover, &:visited
+            {
+                color: white;
+            }
+        }
+    }
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.placeholder { color: #a8a8a8; }
+
+.template-communityjoin\.html
+{
+h2
+    {
+        font-family: OpenSans, Sans;
+        font-size: 20px;
+        line-height: 1.5em;
+        text-transform: none;
+        color: @nuwDarkGrey;
+        font-weight: bold;
+    }
+
+    div.field
+    {
+        margin-bottom: 0;
+    }
+
+    span.label
+    {
+        background-color: transparent;
+        padding: 0;
+        color: @nuwDarkGrey;
+        text-shadow: none;
+        font-weight: normal;
+
+        &.label-important
+        {
+            display: none;
+        }
+    }
+
+    label
+    {
+        margin-top: 5px;
+
+        &.details-header
+        {
+            margin-top: 30px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+    }
+
+    span.option
+    {
+        margin-right: 10px;
+
+        input
+        {
+            margin-right: 5px;
+        }
+    }
+
+    .controlgroup.submit-button
+    {
+        margin: 1em;
+
+        .controls
+        {
+            text-align: right;
+            margin-right: 10px;
+
+            input
+            {
+                background-color: @nuwRed;
+
+                &:hover
+                {
+                    background-color: lighten(@nuwRed, 10%);
+                }
+            }
+        }
+    }
+
+    #frequency
+    {
+        width: 23%;
+
+        #fees label
+        {
+            font-weight: bold;
+        }
+
+        #frequency-label
+        {
+            margin-top: 5px;
+
+            label
+            {
+                top: 5px;
+                position: relative;
+            }
+        }
+
+        span.fee, select
+        {
+            width: 100px;
+            float: right;
+        }
+
+        span.price
+        {
+            color: @nuwRed;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    #card_number
+    {
+        input
+        {
+            width: 253px;
+            margin-left: 10px;
+            margin-bottom: 0;
+        }
+
+        img
+        {
+            margin-left: 10px;
+        }
+
+        div.field
+        {
+            margin-bottom: 5px;
+        }
+    }
+
+    #card_details
+    {
+        div.field
+        {
+            display: inline-block;
+            margin-bottom: 0;
+
+            div.widget, input, label
+            {
+                display: inline-block;
+            }
+
+            div.widget, input
+            {
+                float: right;
+                margin-bottom: 0;
+
+                select
+                {
+                    width: 95px;
+                    margin: 0;
+                    margin-right: 10px;
+                }
+            }
+
+            &.expiry
+            {
+                width: 35.3%;
+            }
+
+            &.cvc
+            {
+                width: 17%;
+            }
+
+            input
+            {
+                width: 95px;
+            }
+        }
+    }
+
+    #name
+    {
+        div.field
+        {
+            display: inline-block;
+            margin-bottom: 0;
+
+            div.widget, input, label
+            {
+                display: inline-block;
+            }
+
+            div.widget, input
+            {
+                float: right;
+                margin-bottom: 0;
+            }
+
+            &.firstname
+            {
+                width: 33%;
+            }
+
+            &.lastname
+            {
+                width: 33%;
+            }
+
+            input
+            {
+                width: 200px;
+            }
+        }
+    }
+
+    #details
+    {
+        div.field
+        {
+            display: inline-block;
+            margin-bottom: 0;
+
+            div.widget, input, label
+            {
+                display: inline-block;
+            }
+
+            div.widget, input
+            {
+                float: right;
+                margin-bottom: 0;
+            }
+
+            input
+            {
+                width: 200px;
+            }
+        }
+    }
+
+    #content fieldset
+    {
+        background-color: @nuwLightGrey  ;
+        padding: 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: none;
+        border-style: none;
+        width: auto;
+    }
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<object>
+  <hidden manager="plone.abovecontent" skinname="Sunburst Theme">
+    <viewlet name="plone.path_bar" />
+  </hidden>
+</object>

@@ -1,0 +1,229 @@
+/* Styles for Industry content type */
+
+/* Industry Logo (In red bar) */
+.industry-logo
+{
+    i
+    {
+        margin-top: 20px;
+    }
+    h2
+    {
+        color: @white;
+        margin-top: 30px;
+        margin-left: 20px;
+        float: left;
+        width: 100px;
+        overflow: visible;
+        white-space: nowrap;
+    }
+}
+
+.industry-worker
+{
+    margin-top: -45px;
+}
+
+.industry-header
+{
+    .icon-sheet( 206px, 150px, url( ++theme++nuw.theme/images/industry-header-people.png ) );
+
+    /* The individual Icons */
+    &.defence-logistics
+    {
+        .icon-sheet .icon( 0, 0 );
+    }
+    &.food-manufacturing
+    {
+        .icon-sheet .icon( 0, 1 );
+    }
+    &.general-manufacturing
+    {
+        .icon-sheet .icon( 0, 2 );
+    }
+    &.cold-storage
+    {
+        .icon-sheet .icon( 0, 3 );
+    }
+    &.pharmaceutical
+    {
+        .icon-sheet .icon( 0, 4 );
+    }
+    &.poultry
+    {
+        .icon-sheet .icon( 0, 5 );
+    }
+    &.warehousing-distribution
+    {
+        .icon-sheet .icon( 0, 6 );
+    }
+    &.market-research-call-centre
+    {
+        .icon-sheet .icon( 0, 7 );
+    }
+    &.sales-marketing-merchandising
+    {
+        .icon-sheet .icon( 0, 8 );
+    }
+    &.dairy-cheese-making
+    {
+        .icon-sheet .icon( 0, 9 );
+    }
+    &.oil
+    {
+        .icon-sheet .icon( 0, 10);
+    }
+    &.food-services
+    {
+        .icon-sheet .icon( 0, 11);
+    }
+}
+
+/* Industry Tab Menu (In Grey bar) */
+.industry-menu
+{
+    ul.nav
+    {
+        margin: 0;
+        margin-top: 6px;
+        margin-left: -12px;
+        border-bottom: 0;
+        
+        li a
+        {
+            color: @white;
+            border-bottom: 0;
+        }
+        li.active a, li a:hover
+        {
+            color: @nuwRed;
+            border-bottom: 0;
+        }
+    }
+}
+
+/* Industry Breadcrumbs */
+#industry-breadcrumbs div.container.row
+{
+    .breadcrumb li
+    {
+        text-shadow: none;
+    }
+    
+    ul li a:link, ul li a:visited, .divider {
+        color: @nuwGrey;
+    }
+    
+    #breadcrumbs-current
+    {
+        color: @nuwDarkGrey;
+        font-weight: bold;
+    }
+}
+
+/* Industry Home View */
+
+.industry #header
+{
+    #banner > div
+    {
+        height: auto;
+        background: none;
+    }
+}
+
+.industry.portaltype-portlet-page
+{
+    h1.documentFirstHeading, #plone-document-byline
+    {
+        display: none;
+    }
+    
+    #content-section
+    {
+        background: url( ++theme++nuw.theme/images/industry-home-bg.png ) repeat-x;
+    }
+}
+
+.industry #portletPageColumns
+{
+    .makeFluidRow();
+    #portletPageFirstColumn, #portletPageSecondColumn
+    {
+        .makeFluidColumn( 5.8 );
+    
+        >div
+        {
+
+            dl.portletCollection
+            {
+                margin: 0;
+                background: @white;
+                padding: 20px;
+                
+                dt
+                {
+                    background: none;
+                    padding: 0;
+                    
+                    /* Copy of the style for h2 (Wish mixins worked with element names as well...)
+                     * Ie:
+                     * h2; */
+                    color: @nuwRed;
+                    font-size: 24px;
+                    font-family: @headingsFontFamily;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    a:hover
+                    {
+                        color: @nuwRed !important;
+                    }
+                }
+                
+                dd
+                {
+                    border-bottom: 1px dotted @nuwGrey;
+                    padding: 10px 0;
+                    
+                    a:before
+                    {
+                        content: " ";
+                        .icon-sheet( 10px, 10px, url( ++theme++nuw.theme/images/button-arrows-10x10.png ) );
+                        .icon-sheet .icon( 1, 0 );
+                        
+                        margin-top: 4px;
+                        margin-right: -10px;
+                        margin-left: -20px;
+                    }
+
+                    a
+                    {
+                        display: block;
+                        color: @nuwDarkGrey;
+                        border: 0;
+                        margin-left: 20px;
+                    }
+                }
+                
+                dd.portletFooter
+                {
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
+
+dl.portlet.portletCollection dt
+{
+    a:link, a:visited, a:hover
+    {
+        color: @nuwRed !important;
+    }
+}
+
+#industry-campaigns-carousel h1 a:hover
+{
+    color: @nuwRed !important;
+}

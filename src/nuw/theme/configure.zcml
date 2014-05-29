@@ -1,0 +1,76 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    i18n_domain="nuw.theme">
+
+  <five:registerPackage package="." initialize=".initialize" />
+  <grok:grok package="." />
+  <include package="z3c.jbot" file="meta.zcml" />
+
+  <browser:jbot
+    directory="templates"
+    />
+
+  <genericsetup:registerProfile
+    name="default"
+    title="nuw.theme"
+    directory="profiles/default"
+    description="Installs the nuw.theme package"
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+  <!-- -*- extra stuff goes here -*- -->
+  
+  <plone:static
+    type="theme" directory="static" />
+
+  <browser:page
+    name="plone_layout"
+    for="*"
+    permission="zope.Public"
+    class=".layout.LayoutPolicy"
+    allowed_interface="plone.app.layout.globals.interfaces.ILayoutPolicy"
+    layer=".interfaces.IThemeSpecific"
+    />            
+
+  <browser:viewlet
+    name="plone.logo"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    class="plone.app.layout.viewlets.common.LogoViewlet"
+    template="viewlets/templates/logo.pt"
+    layer=".interfaces.IThemeSpecific"
+    permission="zope2.View"
+    />
+
+  <browser:viewlet
+    name="plone.path_bar"
+    manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    class="plone.app.layout.viewlets.common.PathBarViewlet"
+    permission="zope2.View"
+    />
+
+  <include package="mooball.portlets.latestcontent.browser" />
+
+  <browser:page
+    for="*"
+    title="Industry Campaign Carousel Listing"
+    name="latestcontentidustrycarousel"
+    template="industry-carousel.pt"
+    permission="zope2.View"
+    menu="mooball_portlets_latestcontent"
+    />
+
+  <plone:static
+    type="theme"
+    directory="static/less"
+    name="less"
+    />
+
+   <cmf:registerDirectory name="skins" directory="skins" recursive="True" />
+</configure>

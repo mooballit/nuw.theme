@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    css:if-content="#visual-portal-wrapper"
+    >
+
+    <theme href="theme-one.html" css:if-content=".template-checkout, .template-cart" />
+    <theme href="theme-three.html" css:if-content=".template-manage-portlets,.template-manage-content-type-portlets"/>
+    <theme href="theme-three.html" if="$have_both_portlets"/>
+    <theme href="theme-two-left.html" if="$have_left_portlets"/>
+    <theme href="theme-two-right.html" if="$have_right_portlets"/>
+    <theme href="theme-one.html" />
+    <drop css:theme=".drop"/>
+
+<!--  RESOURCES -->
+    <replace css:theme="title" css:content="title" />
+    <before theme-children="/html/head" content="/html/head/base" />
+    <before theme-children="/html/head" content="/html/head/link | /html/head/style" />
+    <before theme-children="/html/head" content="/html/head/script" />
+    <before theme-children="/html/head" content="/html/head/meta[not(@name)]|/html/head/meta[@name!='viewport']" />
+    <merge attributes="class" css:content="body" css:theme="body" />
+    <copy attributes="id dir" css:content="body" css:theme="body" />
+
+<!-- HEADER -->
+    <append css:content="#portal-logo" css:theme="#portal-logo-wrapper"/>
+    <append css:content="#portal-languageselector" css:theme="#tools" />
+    
+    <append css:content="#portal-header .in-banner" css:theme="#banner div.container" />
+    <append css:content="#portal-header .in-red-bar" css:theme="#red-bar div.container" />
+    <append css:content="#portal-header .in-grey-bar" css:theme="#grey-bar div.container" />
+    
+    <replace css:content="#portal-searchbox form">
+        <form>
+            <xsl:copy-of select="./@*" />
+            <xsl:attribute name="class">form-inline search-from</xsl:attribute>
+            <div class="input-append">
+                <xsl:copy-of css:select="#searchGadget" />
+                <input>
+                    <xsl:copy-of select=".//input[@type='submit']/@*" />
+                    <xsl:attribute name="class">btn</xsl:attribute>
+                </input>
+            </div>
+            <xsl:copy-of css:select="#LSResult" />
+        </form>
+    </replace>
+    <append css:content='#portal-searchbox' css:theme='#live-search' />
+
+    <replace css:content="#portal-globalnav" css:theme="#portal-globalnav"/>
+    
+    <!-- Fix to make tel: link work properly, Diazo needs to fix this. -->
+    <replace css:theme="#nav-phone">
+        <p id="nav-phone" class="navbar-text pull-right">Call <strong><a href="tel:1300275689">1300 275 689</a></strong></p>
+    </replace>
+    
+    <!-- Global Nav as navbar -->
+    <replace css:content="#portal-globalnav">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+        <div class="nav-collapse">
+            <ul class="nav">
+                <xsl:for-each select="./*">
+                    <li>
+                        <xsl:if test="contains( ./@class, 'selected' )">
+                            <xsl:attribute name="class">active</xsl:attribute>
+                        </xsl:if>
+                        <xsl:copy-of select="./*" />
+                    </li>
+                </xsl:for-each>
+            </ul>
+        </div>
+    </replace>
+
+    <replace css:content="#portal-personaltools" css:theme="#portal-personaltools"/>
+
+<!-- CONTENT -->
+    <append css:content-children="#portal-column-content" css:theme="#portal-column-content"/>
+    <append css:content-children="#portal-column-one" css:theme="#portal-column-one" />
+    <append css:content-children="#portal-column-two" css:theme="#portal-column-two" />
+    
+    <replace css:content=".portletNavigationTree .portletHeader" css:if-content=".section-get-involved">
+        <dt class="portletHeader get-page">
+            <span class="portletTopLeft"></span>
+            <span class="section-title">Get <strong>Active</strong></span>
+            <span class="portletTopRight"></span>
+        </dt>
+    </replace>
+    <replace css:content=".portletNavigationTree .portletHeader" css:if-content=".section-get-informed">
+        <dt class="portletHeader get-page">
+            <span class="portletTopLeft"></span>
+            <span class="section-title">Get <strong>Informed</strong></span>
+            <span class="portletTopRight"></span>
+        </dt>
+    </replace>
+    <replace css:content=".portletNavigationTree .portletHeader" css:if-content=".section-get-assistance">
+        <dt class="portletHeader get-page">
+            <span class="portletTopLeft"></span>
+            <span class="section-title">Get <strong>Assistance</strong></span>
+            <span class="portletTopRight"></span>
+        </dt>
+    </replace>
+
+    <!-- Listing Bar -->
+    <xi:include href="++theme++mooball.theme.bootstrap/plone-elements/listing-bar.xml" />
+
+    <replace css:content="div.listingBar">
+        <xsl:call-template name="listing-bar" />
+    </replace>
+
+<!-- ANALYTICS -->
+    <append css:content-children="#page-bottom-script" css:theme="#analytics" />
+
+<!-- FOOTER -->
+    <replace css:content="#nuw-footer" css:theme-children="#footer" />
+
+    <!-- Portal Message as alerts -->
+    <xi:include href="++theme++mooball.theme.bootstrap/plone-elements/portal-message.xml" />
+
+    <replace css:content="dl.portalMessage">
+        <xsl:call-template name="portal-message" />
+    </replace>
+    
+    <!-- Breadcrumbs as Breadcrumbs (duh!) -->
+    <xi:include href="++theme++mooball.theme.bootstrap/plone-elements/breadcrumbs.xml" />
+
+    <replace css:content="#portal-breadcrumbs">
+        <xsl:if test="not($is_frontpage)">
+        <ul class="breadcrumb">
+            <xsl:if test="contains(//@class, 'industry')">
+                <xsl:for-each select="./*[position() &gt; 1]">
+                    <li>
+                        <xsl:copy-of select="./*[1]" />
+                        <xsl:if test="contains( ./*/@class, 'breadcrumbSeparator' )">
+                            <span class="divider">//</span>
+                        </xsl:if>
+                    </li>
+                </xsl:for-each>
+            </xsl:if>
+            <xsl:if test="not(contains(//@class, 'industry'))">
+                <xsl:for-each select="./*[position() &gt; 2]">
+                    <li>
+                        <xsl:copy-of select="./*[1]" />
+                        <xsl:if test="contains( ./*/@class, 'breadcrumbSeparator' )">
+                            <span class="divider">//</span>
+                        </xsl:if>
+                    </li>
+                </xsl:for-each>
+            </xsl:if>
+        </ul>
+        </xsl:if>
+    </replace>
+
+    <append css:content='#portal-breadcrumbs' css:theme='#breadcrumbs' css:if-not-content=".industry" />
+    <drop css:theme='#industry-breadcrumbs' css:if-not-content=".industry" />
+    <append css:content='#portal-breadcrumbs' css:theme='#industry-breadcrumbs div.container' css:if-content=".industry" />
+    <drop css:theme='#breadcrumbs' css:if-content=".industry" />
+    
+    <!-- Edit bar as nav-tabs along with dropdowns -->
+    <xi:include href="++theme++mooball.theme.bootstrap/plone-elements/edit-bar.xml" />
+
+    <replace css:content="#edit-bar">
+        <div class="edit-bar icons-on">
+            <ul class="nav nav-tabs pull-left">
+                <xsl:for-each css:select="#content-views li">
+                    <li>
+                        <xsl:if test="contains( ./@class, 'selected' )">
+                            <xsl:attribute name="class">active</xsl:attribute>
+                        </xsl:if>
+                        <xsl:copy-of select="./a" />
+                    </li>
+                </xsl:for-each>
+            </ul>
+            <ul class="nav nav-tabs pull-right">
+                <xsl:for-each css:select="#contentActionMenus &gt; li">
+                    <xsl:sort select="position()" data-type="number" order="descending"/>
+                    <li class="dropdown">
+                        <xsl:copy-of select="./dl/@id" />
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <xsl:copy-of select="./dl/dt/a/span[last()-1]" />
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <xsl:for-each select="./dl/dd/ul/li">
+                                <li>
+                                    <xsl:copy-of select="./@*" />
+                                    <xsl:if test="contains(./a/@class, 'actionMenuSelected')">
+                                        <xsl:attribute name="class">active</xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:copy-of select="./node()" />
+                                </li>
+                            </xsl:for-each>
+                        </ul>
+                    </li>
+                </xsl:for-each>
+            </ul>
+            <div class="visualClear"></div>
+        </div>
+    </replace>
+
+    <!-- Personal Tools as button with dropdown -->
+    <xi:include href="++theme++mooball.theme.bootstrap/plone-elements/personal-tools.xml" />
+
+    <replace css:content="#portal-personaltools">
+        <xsl:call-template name="personal-tools" />
+    </replace>
+
+    <!-- Form stuff -->
+    
+    <!-- Transform form buttons to bootstrap buttons (With the save one being the primary) -->
+    <xi:include href="++theme++mooball.theme.bootstrap/plone-elements/form-buttons.xml" />
+
+    <replace css:content="form input[type='button'],form input[type='submit'],form input[type='reset']">
+        <xsl:call-template name="form-buttons" />
+    </replace>
+    
+    <!-- Transform required indicators to use the bootstrap lables -->
+    <xi:include href="++theme++mooball.theme.bootstrap/plone-elements/required-label.xml" />
+
+    <replace css:content="label span.fieldRequired, label span.required">
+        <xsl:call-template name="required-label" />
+    </replace>
+    
+    <!-- Misc UI Stuffs -->
+    
+    <!-- contents table -->
+    <xi:include href="++theme++mooball.theme.bootstrap/plone-elements/table-all.xml" />
+
+    <replace css:content="#folderlisting-main-table table#listing-table">
+        <table>
+            <xsl:copy-of select="./@*"/>
+            <xsl:attribute name="class">table table-striped table-bordered icons-on</xsl:attribute>
+            <xsl:copy-of select="./node()"/>
+        </table>
+    </replace>
+
+</rules>
